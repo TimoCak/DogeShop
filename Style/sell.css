@@ -1,0 +1,42 @@
+body {
+    text-align: center;
+}
+
+#description {
+    width: 50%;
+    height: auto;
+    background-color: #c2bd60;
+    color: black;
+    display: inline-block;
+}
+
+#title {
+    width: 50%;
+    height: auto;
+    background-color: #c2bd60;
+    color: black;
+    display: inline-block;
+}
+
+#file {
+    width: 50%;
+    height: auto;
+    text-align: center;
+    display: inline-block;
+}
+
+#wallet {
+    width: 50%;
+    height: auto;
+    background-color: #c2bd60;
+    color: black;
+    display: inline-block;
+}
+
+#price {
+    width: 50%;
+    height: auto;
+    background-color: #c2bd60;
+    color: black;
+    display: inline-block;
+}
