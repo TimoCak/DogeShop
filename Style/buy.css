@@ -2,3 +2,35 @@ body {
     text-align: center;
 
 }
+
+#ownerLink:Link {
+    color: gold;
+}
+
+#ownerLink {
+    margin-left: 70%;
+}
+
+
+#description {
+    border-style: groove;
+    width: 50%;
+}
+#product {
+    display: inline-flex;
+    width: 70%;
+    margin-bottom: 1em;
+}
+
+#data {
+    margin-bottom: 2em;
+}
+
+.buyPicture:hover {
+    transition: transform 0.5s;
+    transform: scale(1.2, 1.2);
+}
+.card {
+    background-color: #1e4151;
+    color: #c2bd60;
+}

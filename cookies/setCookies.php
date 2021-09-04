@@ -1,3 +1,3 @@
 <?php
-setcookie("toggle", true);
+setcookie("toggle", 1);
 

@@ -5,7 +5,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="shortcut icon" type="image/x-icon" href="Pictures/DOGE.png">
     <link rel="stylesheet" type="text/css" href="Style/buy.css">
     <meta charset="UTF-8">
     <meta http-equiv="Content-type" content="application/json; charset=UTF-8"/>
@@ -51,43 +50,57 @@
 
     include "Connector/db_connect.php";
 
+    $offset = 20;
     $dbh = $_SESSION['dbh'];
     $sql = "SELECT * FROM information;";
     if (isset($_GET["submit"])) {
-        $sql = "SELECT * FROM information WHERE title='".$_GET['search']."'";
+        $sql = "SELECT * FROM information WHERE title='".$_GET['search']."' LIMIT $offset";
     }
     $res = mysqli_query($dbh, $sql);
-
-        echo "<ol>";
+        echo "<div id='data'>";
         if ($res->num_rows > 0) {
             while ($i = $res->fetch_assoc()) {
 
-                echo "<li style='border: 2px;border-style: solid;background-color: #1e4151;color: #c2bd60;width: 70%;height: auto;display: inline-block;margin-bottom: 1em;padding-bottom: 0;'>"
-                    . "<h2>" . $i["title"] . "</h2>" . "<p style='margin-left: 50%'><b>" . $i["price"] . "</b> DOGE" .
-                    "</p>" . "<img width='50%' height='auto' src=".str_replace(" ", "%20", $i['picture'])."><br>" . "<p style='margin-top: 5%'>Description:</p>" . "<textarea readonly style='width: 50%;height: 250px'>" . $i["description"] . "</textarea>" .
-                    "<form method='post' action='updates/contact.php'>
-                    <button onlclick='contact()' type='submit' name='submit'  value='".$i["userId"]."' class='btn btn-outline-success' style='margin-left: 75%;margin-bottom: 5%;'>CONTACT</button></form>" . "</li>";
+                echo "<div id='product' class='card-group'><div class='card' >";
+                if ($i["title"]=="") {
+                    echo "<h2 class='card-title'>Unknown Title</h2>";
+                } else {
+                    echo "<h2 class='card-title'>" . $i["title"] . "</h2>";
+                }
+
+                echo "<p style='margin-left: 50%'><b>" . $i["price"] . "</b> DOGE" .
+                    "</p>" . "<img class='card-img-left' width='250px' height='250px' src=".str_replace(" ", "%20", $i['picture'])."></div><br><br>" ."<div class='card'><div class='card-body'><h5 class='card-title'>Description</h5><textarea rows='7' readonly id='description' class='card-text'>" . $i["description"] . "</textarea></div>";
+
+                echo "<table class='table' style='border-style: solid;border-width: 5px'><tr>";
+
+                if (isset($_SESSION["userid"])) {
+
+                    if ($_SESSION["userid"] == $i["userId"]) {
+                        echo "<th class='col'><br><a class='card-link' id='ownerLink' href='myProducts.php' data-toggle='tooltip' title='you are the owner!'>
+                           <svg xmlns='http://www.w3.org/2000/svg' width='50' height='40' fill='gold' class='bi bi-person-badge-fill' viewBox='0 0 16 16'>
+                           <path d='M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm4.5 0a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 2.755C12.146 12.825 10.623 12 8 12s-4.146.826-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z'/>
+                           </svg></a></th>";
+                    } else {
+                        echo "<th class='col'><form id='contact'  method='post' action='updates/contact.php' ><button data-toggle='tooltip' title='contact seller!' type='submit' name='submit'  value='" . $i["userId"] . "' class='btn btn-outline-success' style='margin-left: 75%;margin-bottom: 5%;'>
+                            <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-people' viewBox='0 0 16 16'>
+                            <path d='M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z'/>
+                            </svg></button></form></th>";
+
+                    }
+                }
+                echo "<th><a href='#' ><img class='buyPicture' data-toggle='tooltip' title='buy product!' src='Pictures/Cjdowner-Cryptocurrency-Flat-Dogecoin-DOGE.svg' width='50' height='40'>
+                      </a></th></tr></table>";
+                echo "</div></div>";
 
             }
         } else {
             echo "no matches found!";
         }
-        echo "</ol>";
+        echo "</div>";
 
 $dbh->close();
 
 ?>
-
-<script type='text/javascript'>
-    function contact() {
-        var conf = window.confirm('You wanna contact buyer?');
-
-        if (!conf) {
-            document.getElementById('contact').action = '';
-        }
-    }
-
-</script>
 
 </body>
 </html>

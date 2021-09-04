@@ -5,7 +5,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="shortcut icon" type="image/x-icon" href="Pictures/DOGE.png">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Style/sell.css">
     <title>Doge Shop: sell</title>
