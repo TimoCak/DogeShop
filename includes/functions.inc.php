@@ -406,3 +406,41 @@ function isUserInChat($chatId) {
     }
 }
 
+function getAllProducts() {
+    $servername = "localhost";
+    $db_name = "products";
+    $user = "root";
+    $pass = "t7i9m8o12";
+
+    $connection = new mysqli($servername, $user, $pass, $db_name);
+
+    $stmt = $connection->query("SELECT * FROM information");
+
+    $amount = mysqli_num_rows($stmt);
+
+    $connection->close();
+
+    return $amount;
+}
+
+function getMyProducts() {
+    $servername = "localhost";
+    $db_name = "products";
+    $user = "root";
+    $pass = "t7i9m8o12";
+
+    $connection = new mysqli($servername, $user, $pass, $db_name);
+
+    $stmt = $connection->prepare("SELECT * FROM information WHERE userId=?");
+
+    $stmt->bind_param("i",$_SESSION["userid"]);
+
+    $stmt->execute();
+
+    $amount = $stmt->num_rows;
+
+    $connection->close();
+
+    return $amount;
+}
+

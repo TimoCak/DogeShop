@@ -20,7 +20,7 @@
         <input id="title" class="form-control" name="title">
         <br><br>
         <label>Description:</label><br>
-        <textarea id="description" type="text" class="form-control" rows="5" name="description"> </textarea>
+        <textarea id="description" type="text" class="form-control" rows="5" name="description"></textarea>
         <br><br>
         <label>price:</label><br> <input style="width: 10%;height: auto;background-color: #c2bd60;color: black; display: inline-block;
     " id="price" class="form-control" type="number" step="0.00000001" name="price"> <label>DOGE</label>

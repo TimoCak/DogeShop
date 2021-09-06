@@ -33,30 +33,40 @@
         }
     });
     request.send();
-
-    function showWalletInfo() {
-
-    }
 </script>
 
-<form action="buy.php" method="get">
+<form  action="buy.php" method="get">
 <div class="input-group" style="width: 50%;height: auto;display: inline-flex;margin-bottom: 20px">
-    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-           aria-describedby="search-addon" name="search"/>
-    <button type="submit" class="btn btn-outline-primary" name="submit">search</button>
+    <input  type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+           aria-describedby="search-addon" name="search" value=""/>
+    <button type="submit" class="btn btn-outline-primary">search</button>
 </div>
 </form>
 <?php
-
     include "Connector/db_connect.php";
 
+
+
     $offset = 20;
-    $dbh = $_SESSION['dbh'];
-    $sql = "SELECT * FROM information;";
-    if (isset($_GET["submit"])) {
-        $sql = "SELECT * FROM information WHERE title='".$_GET['search']."' LIMIT $offset";
+
+    if (isset($_POST["nextPage"])) {
+        $maxItems = $_POST["nextPage"];
+        $minItems = $maxItems-$offset;
+    } else {
+        $minItems = 0;
+        $maxItems = 20;
     }
+    $dbh = $_SESSION['dbh'];
+    $sql = "SELECT * FROM information LIMIT ".$minItems.",".$maxItems;
+    if (isset($_GET["search"])) {
+        $search = $_GET["search"];
+        $sql = "SELECT * FROM information WHERE title='".$search."' or description='".$search."'  LIMIT ".$minItems.",".$maxItems;
+    }
+
     $res = mysqli_query($dbh, $sql);
+    if (!$res) {
+        trigger_error('Invalid query '. $dbh->error);
+    }
         echo "<div id='data'>";
         if ($res->num_rows > 0) {
             while ($i = $res->fetch_assoc()) {
@@ -69,7 +79,7 @@
                 }
 
                 echo "<p style='margin-left: 50%'><b>" . $i["price"] . "</b> DOGE" .
-                    "</p>" . "<img class='card-img-left' width='250px' height='250px' src=".str_replace(" ", "%20", $i['picture'])."></div><br><br>" ."<div class='card'><div class='card-body'><h5 class='card-title'>Description</h5><textarea rows='7' readonly id='description' class='card-text'>" . $i["description"] . "</textarea></div>";
+                    "</p>" . "<img class='card-img-left' width='250px' height='250px' src=".str_replace(" ", "%20", $i['picture'])."></div><br><br>" ."<div class='card'><div class='card-body'><h5 class='card-title'>Description</h5><textarea rows='7' readonly id='description' class='card-text'>".$i["description"]."</textarea></div>";
 
                 echo "<table class='table' style='border-style: solid;border-width: 5px'><tr>";
 
@@ -101,7 +111,10 @@
 $dbh->close();
 
 ?>
-
+<?php
+    include "html_Files/offset.php";
+    echo "<br> <br> <br>";
+?>
 </body>
 </html>
 <?php

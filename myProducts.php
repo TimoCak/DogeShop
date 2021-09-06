@@ -76,6 +76,16 @@ include "html_Files/particles.php";
 <br><br>
 <?php
 
+$offset = 20;
+
+if (isset($_POST["nextPage"])) {
+    $maxItems = $_POST["nextPage"];
+    $minItems = $maxItems-$offset;
+} else {
+    $minItems = 0;
+    $maxItems = 20;
+}
+
 $servername = "localhost";
 $db_name = "products";
 $user = "root";
@@ -87,7 +97,7 @@ $counter = 0;
 
 $userId = $_SESSION["userid"];
 
-$stmt = $connection->prepare("SELECT * FROM information WHERE userId=?");
+$stmt = $connection->prepare("SELECT * FROM information WHERE userId=? LIMIT ".$minItems.",".$maxItems);
 
 $stmt->bind_param("i",$userId);
 
@@ -152,6 +162,8 @@ $connection->close();
 
 
 <?php
+include "html_Files/offsetMyProducts.php";
+echo "<br> <br> <br>";
 include "html_Files/footer.php";
 ?>
 
