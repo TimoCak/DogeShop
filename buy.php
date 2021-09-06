@@ -98,7 +98,7 @@
 
                     }
                 }
-                echo "<th><a href='#' ><img class='buyPicture' data-toggle='tooltip' title='buy product!' src='Pictures/Cjdowner-Cryptocurrency-Flat-Dogecoin-DOGE.svg' width='50' height='40'>
+                echo "<th><a href='pay.php?pid=".$i["productId"]."' ><img class='buyPicture' data-toggle='tooltip' title='buy product!' src='Pictures/Cjdowner-Cryptocurrency-Flat-Dogecoin-DOGE.svg' width='50' height='40'>
                       </a></th></tr></table>";
                 echo "</div></div>";
 
