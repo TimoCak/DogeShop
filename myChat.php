@@ -129,9 +129,8 @@ include "html_Files/particles.php";
 if(isset($_GET["id"])) {
 
     $chatId = $_GET["id"];
-
     #create history
-    if (existsChatId($chatId)) {
+    if (isUserInChat($chatId)) {
         $stmt = $connection->query("CREATE TABLE history" . $_GET["id"] . "(messageId int NOT NULL AUTO_INCREMENT,
         userId int, message varchar(255), PRIMARY KEY (messageId));");
     }
@@ -262,6 +261,7 @@ if (isset($_GET["id"])) {
     });
 </script>";
 }
+
 ?>
 
 <?php

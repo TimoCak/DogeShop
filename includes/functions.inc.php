@@ -352,7 +352,8 @@ function getProfilePicture($userId)
 
 }
 
-function existsChatId($chatId) {
+  function existsChatId($chatId): bool
+  {
     $servername = "localhost";
     $db_name = "products";
     $user = "root";
@@ -367,7 +368,7 @@ function existsChatId($chatId) {
     $stmt->bind_result($chatid);
 
     if ($stmt->fetch()) {
-        return $stmt->fetch();
+        return true;
     }
     $stmt->free_result();
 
@@ -423,7 +424,8 @@ function getAllProducts() {
     return $amount;
 }
 
-function getMyProducts() {
+function getMyProducts()
+{
     $servername = "localhost";
     $db_name = "products";
     $user = "root";
