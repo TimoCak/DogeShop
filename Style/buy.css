@@ -34,3 +34,12 @@ body {
     background-color: #1e4151;
     color: #c2bd60;
 }
+
+.owner-badge {
+    display: block;
+}
+
+.owner-badge:hover {
+    transition: transform 0.5s;
+    transform: scale(1.2, 1.2);
+}
