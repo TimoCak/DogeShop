@@ -16,10 +16,10 @@ include "html_Files/navbar.php";
         <?php
         if(isset($_GET["error"])) {
             if ($_GET["error"] == "emptyinput") {
-                echo "<p>Please, all information is required!</p>";
+                echo "<p style='color: red'>Please, all information is required!</p>";
             }
             else if($_GET["error"] == "wronglogin") {
-                echo "<p>Wrong login!</p>";
+                echo "<p style='color: red'>Wrong login!</p>";
             }
         }
         ?>

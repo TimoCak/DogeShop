@@ -11,10 +11,8 @@
     <title>Doge Shop: buy</title>
 </head>
 <body style="background-color: #dec06e">
-
-<h5>Posted products!</h5>
-
-<label>Amount of Doge: </label><p id="response"></p>
+<br>
+<h4>BUY STUFF FOR DOGE!</h4><br>
 
 <script language="JavaScript">
 
@@ -79,7 +77,7 @@
                 }
 
                 echo "<p style='margin-left: 50%'><b>" . $i["price"] . "</b> DOGE" .
-                    "</p>" . "<img class='card-img-left' width='250px' height='250px' src=".str_replace(" ", "%20", $i['picture'])."></div><br><br>" ."<div class='card'><div class='card-body'><h5 class='card-title'>Description</h5><textarea rows='7' readonly id='description' class='card-text'>".$i["description"]."</textarea></div>";
+                    "</p>" . "<img class='card-img-left' width='300px' height='250px' src=".str_replace(" ", "%20", $i['picture'])."></div><br><br>" ."<div class='card'><div class='card-body'><h5 class='card-title'>Description</h5><textarea rows='7' readonly id='description' class='card-text'>".$i["description"]."</textarea></div>";
 
                 echo "<table class='table' style='border-style: solid;border-width: 5px'><tr>";
 
@@ -99,6 +97,8 @@
                               </a></th>";
 
                     }
+                } else {
+                    echo "<th><a class='car-link login-link' href='login.php'>sign in to buy!</a></th>";
                 }
                 echo "</tr></table></div></div>";
 

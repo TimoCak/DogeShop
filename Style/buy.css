@@ -11,11 +11,11 @@ body {
     margin-left: 70%;
 }
 
-
 #description {
     border-style: groove;
-    width: 50%;
+    width: 75%;
 }
+
 #product {
     display: inline-flex;
     width: 70%;
@@ -42,4 +42,12 @@ body {
 .owner-badge:hover {
     transition: transform 0.5s;
     transform: scale(1.2, 1.2);
+}
+
+.login-link {
+    color: red;
+}
+
+.login-link:hover {
+    color: #c2bd60;
 }

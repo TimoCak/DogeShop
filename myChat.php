@@ -42,6 +42,8 @@ include "html_Files/particles.php";
     .users {
         border-style: solid;
         padding: 1em;
+        background-color: gray;
+        color: white;
     }
     .users:hover {
         background-color: #1e4151;
@@ -68,6 +70,7 @@ include "html_Files/particles.php";
         border-style: groove;
         display: block;
         overflow-y: scroll;
+        color: black;
 
     }
 
