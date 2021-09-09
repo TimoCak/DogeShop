@@ -37,8 +37,12 @@
 <div class="input-group" style="width: 50%;height: auto;display: inline-flex;margin-bottom: 20px">
     <input  type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
            aria-describedby="search-addon" name="search" value=""/>
-    <select id="category" name="category" class="form-control">
-        <option selected>Movies, Series, Music & Games</option>
+    <?php
+        echo "<select id='category' name='category' class='form-control'>";
+        if (isset($_GET["category"])) {
+        echo "<option style='background-color: #1e4151;color: #c2bd60'>".$_GET["category"]."</option>";
+        }
+        echo "<option>Movies, Series, Music & Games</option>
         <option>Software</option>
         <option>Electronic & Computer</option>
         <option>Books</option>
@@ -46,7 +50,8 @@
         <option>Sport</option>
         <option>Car</option>
         <option>Clothes & Accesiores</option>
-    </select>
+    </select>";
+    ?>
     <button type="submit" class="btn btn-outline-primary">search</button>
 </div>
 </form>
