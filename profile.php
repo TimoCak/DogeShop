@@ -17,7 +17,7 @@
             color: #c2bd60;
             margin-top: 5%;
             background-color: #1e4151;
-            width: 30%;
+            width: 50%;
             height: auto;
             display: inline-block;
         }

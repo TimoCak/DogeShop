@@ -37,6 +37,16 @@
 <div class="input-group" style="width: 50%;height: auto;display: inline-flex;margin-bottom: 20px">
     <input  type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
            aria-describedby="search-addon" name="search" value=""/>
+    <select id="category" name="category" class="form-control">
+        <option selected>Movies, Series, Music & Games</option>
+        <option>Software</option>
+        <option>Electronic & Computer</option>
+        <option>Books</option>
+        <option>Toys</option>
+        <option>Sport</option>
+        <option>Car</option>
+        <option>Clothes & Accesiores</option>
+    </select>
     <button type="submit" class="btn btn-outline-primary">search</button>
 </div>
 </form>
@@ -56,11 +66,12 @@
     }
     $dbh = $_SESSION['dbh'];
     $sql = "SELECT * FROM information LIMIT ".$minItems.",".$maxItems;
-    if (isset($_GET["search"])) {
-        $search = $_GET["search"];
-        $sql = "SELECT * FROM information WHERE title='".$search."' or description='".$search."'  LIMIT ".$minItems.",".$maxItems;
-    }
 
+    if (isset($_GET["search"])) {
+        $category = $_GET["category"];
+        $search = $_GET["search"];
+        $sql = "SELECT * FROM information WHERE title='".$search."' or description='".$search."' or category='".$category."' LIMIT ".$minItems.",".$maxItems;
+    }
     $res = mysqli_query($dbh, $sql);
     if (!$res) {
         trigger_error('Invalid query '. $dbh->error);

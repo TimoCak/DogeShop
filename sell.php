@@ -22,6 +22,17 @@
         <label>Description:</label><br>
         <textarea id="description" type="text" class="form-control" rows="5" name="description"></textarea>
         <br><br>
+        <label for="category">Category:</label><br>
+        <select id="category" name="category" class="form-control">
+            <option selected>Movies, Series, Music & Games</option>
+            <option>Software</option>
+            <option>Electronic & Computer</option>
+            <option>Books</option>
+            <option>Toys</option>
+            <option>Sport</option>
+            <option>Car</option>
+            <option>Clothes & Accesiores</option>
+        </select><br><br>
         <label>price:</label><br> <input style="width: 10%;height: auto;background-color: #c2bd60;color: black; display: inline-block;
     " id="price" class="form-control" type="number" step="0.00000001" name="price"> <label>DOGE</label>
         <br><br>
@@ -34,6 +45,7 @@
         <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
         <input type="file" class="form-control-file" id="file" name="picture"> <br><br>
         <input id="button" type="submit" class="btn btn-primary mb-2" value="submit" name="send">
+
     </div>
 </form>
 
@@ -86,6 +98,7 @@ if(isset($_POST['send'])) {
     $price = $_POST['price'];
     $post_time = date("Y-m-d H:i:s");
     $usersId = $_SESSION["userid"];
+    $category = $_POST["category"];
 
    include "Connector/db_connect.php";
 
@@ -101,8 +114,8 @@ if(isset($_POST['send'])) {
     if (isset($_SESSION["userid"])) {
 
 
-        $sendToDB = $dbh->prepare("INSERT INTO information (title,description,wallet,price,post_time,picture,userId) VALUES (?,?,?,?,?,?,?)");
-        $sendToDB->bind_param('sssdssi', $title, $description, $wallet, $price, $post_time, $picture, $_SESSION["userid"]);
+        $sendToDB = $dbh->prepare("INSERT INTO information (title,description,wallet,price,post_time,picture,userId,category) VALUES (?,?,?,?,?,?,?,?)");
+        $sendToDB->bind_param('sssdssis', $title, $description, $wallet, $price, $post_time, $picture, $_SESSION["userid"],$category);
         if ($sendToDB === false) {
             die ($dbh->error);
         }

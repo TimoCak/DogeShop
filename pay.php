@@ -24,7 +24,7 @@ $stmt->bind_param("i",$pid);
 
 $stmt->execute();
 
-$stmt->bind_result($title,$description, $wallet, $price, $post_time, $picture, $userId, $productId);
+$stmt->bind_result($title,$description, $wallet, $price, $post_time, $picture, $userId, $productId,$category);
 
 while($stmt->fetch()) {
     echo "<div class='card' style='width: 50%'>";
