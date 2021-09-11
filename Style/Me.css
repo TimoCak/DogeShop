@@ -1,8 +1,11 @@
 body {
     text-align: center;
+    overflow: hidden
 }
 
 h1 {
     background-color: #1e4151;
     color: #c2bd60;
 }
+
+
