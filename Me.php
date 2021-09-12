@@ -1,5 +1,6 @@
 <?php
 include "html_Files/navbar.php";
+include 'html_Files/particles.php';
 ?>
 
 <!DOCTYPE html>
@@ -14,19 +15,20 @@ include "html_Files/navbar.php";
 </head>
 <body style="background-color: #dec06e">
 <br><br>
-<img src="Pictures/Me.jpg" style="width: 10%;height: auto;">
+<img src="Pictures/Me.jpg" width="250" height="250" class="img-fluid" style="border-color: #1e4151;border-style: groove"><br><br>
+
+<div style="background-color: white;width: 50%;margin: auto;border-style: groove;">
 <p>Hi, guys my name is Timo. I'm a CS student who is a big fan of crypto and programming.<br>
-    I'm trying to build more apps around crypto but this is actually my first ever Website i published. So i hope that you like it.<br>
-    It is my tribute to the Doge community<br>
-    I will improve this Website over time but currently college is really hard and time consuming.<br>
-    you can contact me any time if you are experiencing any problems: timo-caktu@web.de<br>
-    Or Follow me on Twitter for more updates and fun stuff: </p>
-<a href="https://twitter.com/Timo21892886?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @Timo21892886</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    Welcome to my Website <a href="index.php">SellForDoge.com</a><br> which is a free platform where you can sell and buy stuff for DOGE!<br>
+    I will improve this Website over time! If you have any issues or maybe ideas to improve this website, feel free to contact me: <br>
+    E-Mail: <i>timo-caktu@web.de</i><br>
+    Or twitter: <a href="https://twitter.com/Timo21892886?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  </p>
+    More specific infos about this website are here: <a href="info.php">info-page</a><br>
 <br><br><br>
-<h5></h5>
-<h4>Donate: DPMwmsSfZsF8zr7KU2wMPEJPHfhd1pEgDd</h4>
+<p>This website is totally free! But it would be nice if you shibes could spare some coins:</p>
+    <h4>Donate: DPMwmsSfZsF8zr7KU2wMPEJPHfhd1pEgDd</h4></div>
 <br><br>
-<a class="twitter-timeline" href="https://twitter.com/Timo21892886?ref_src=twsrc%5Etfw">Tweets by Timo21892886</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <?php
 include "html_Files/toggleNight.php";
 include "html_Files/footer.php";

@@ -36,7 +36,10 @@ include "html_Files/particles.php";
             display: inline-block;
         }
         #idea {
-
+            background-color: #1e4151;
+            width: 50%;
+            color: #c2bd60;
+            display: inline-block;
         }
     </style>
 </head>
@@ -51,13 +54,28 @@ include "html_Files/particles.php";
 
 
     <h2 id="idea">Idea of this Website?</h2>
-
+    <ol>
+        <li>The idea is to provide a website where you can find people who are just here to sell or buy stuff for DogeCoin.</li>
+        <li>This website is depended on its community: If the community is bigger then more products can be find here! So i hope you believe in the idea and stay so this service can improve and grow!</li>
+        <li>I'm no middleman like amazon! So the shipping and payment is managed by yourself! So please use the contact function or alternatives like WhatsApp, Telegram, Discord,etc. to contact each other!
+            I chose this solution because for me as a student my budget is very limited and i can't manage this all by myself. So please have understanding!</li>
+        <li>I think about more social features like public profiles, friend list, public chats, seller rating and so on!
+            <br>So please be patient for more stuff!</li>
+        </ol><br><br>
     <h2 id="seller">Seller?</h2>
+    <ol> On this platform the seller are going through these steps:<br>
+        <li>sign up</li>
+        <li>upload a product of your choice</li>
+        <li>wait until someone contacts you! They can contact via the chat-function or you gave some alternatives on the description of the product(WhatsApp,Discord,...)</li>
+        <li>talk to your potential customer!</li>
+    </ol><br><br>
 
     <h2 id="buyer">Buyer?</h2>
+    <ol> As a buyer you going through these steps:<br>
+        <li>sign up</li>
+        <li>contact the seller of your chosen product!</li>
+    </ol>
     </div>
-
-
 
 </body>
 

@@ -35,7 +35,7 @@ while($stmt->fetch()) {
     echo "<p>------------------------------------------</p>";
     echo "<p class='card-text'>Price: $price DOGE</p>";
     echo "<p class='card-text'>Wallet: ".$wallet."</p>";
-    echo "<div class='container'><div class='row'> <div class='col-sm'><form action='mails/bought.php' method='post'>
+    echo "<div class='container'><div class='row'> <div class='col-sm'><form action='' method='post'>
             <button onclick='doAlert()' value='$productId' name='pid' class='btn btn-primary'>buy now!</button>
             <input hidden name='seller' value='$userId'>
             <input hidden name='buyer' value='".$_SESSION["userid"]."'></form></div>";
