@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Style/sell.css">
-    <title>Doge Shop: sell</title>
+    <title>sell</title>
 </head>
 
 <body style="background-color: #dec06e">

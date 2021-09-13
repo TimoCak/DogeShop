@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="Style/buy.css">
     <meta charset="UTF-8">
     <meta http-equiv="Content-type" content="application/json; charset=UTF-8"/>
-    <title>Doge Shop: buy</title>
+    <title>buy</title>
 </head>
 <body style="background-color: #dec06e">
 <br>
