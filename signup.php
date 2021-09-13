@@ -2,7 +2,6 @@
     include "html_Files/navbar.php";
 ?>
 <title>Signup</title>
-<link rel="shortcut icon" type="image/x-icon" href="Pictures/DOGE.png">
 <body style="background-color: #dec06e">
 <section>
     <div style="text-align: center">
