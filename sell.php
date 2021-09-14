@@ -8,6 +8,16 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Style/sell.css">
     <title>sell</title>
+
+    <style>
+        #category {
+            width: 20%;
+            display: inline-block;
+            background-color: #c2bd60;
+            height: auto;
+            color: black;
+        }
+    </style>
 </head>
 
 <body style="background-color: #dec06e">

@@ -18,7 +18,7 @@ include 'html_Files/particles.php';
 
 <div style="background-color: white;width: 50%;margin: auto;border-style: groove;">
 <p>Hi, guys my name is Timo. I'm a CS student who is a big fan of crypto and programming.<br>
-    Welcome to my Website <a href="index.php">SellForDoge.com</a><br> which is a free platform where you can sell and buy stuff for DOGE!<br>
+    Welcome to my Website <a href="index.php">SellForDoge.com</a><br> which is a free platform where you can sell and buy stuff with DOGE!<br>
     I will improve this Website over time! If you have any issues or maybe ideas to improve this website, feel free to contact me: <br>
     E-Mail: <i>timo-caktu@web.de</i><br>
     Or twitter: <a href="https://twitter.com/Timo21892886?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  </p>

@@ -5,8 +5,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta name="author" content="Timo Caktu">
-    <meta name="description" content="A free Website where you can buy and sell products for Dogecoin!">
+
+    <meta property="og:title" content="sellfordoge">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sellfordoge.com">
+    <meta property="og:image" content="https://sellfordoge.com/Pictures/DogeAstro.jpg">
+    <meta property="og:description" content="A free Website where you can buy and sell stuff with Dogecoin!">
+
+    <meta name="twitter:title" content="sellfordoge">
+    <meta name="twitter:description" content="A free Website where you can buy and sell stuff with Dogecoin!">
+    <meta name="twitter:image" content="https://sellfordoge.com/Pictures/DogeAstro.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+
+
     <meta name="keywords" content="Dogecoin, doge, DogeShop, shop, shiba inu, e-commerce, php, website, buy, sell, products, stuff, e-bay, amazon, elon musk, rocket launcher, dogehouse, DOGE, cryptocurrencies, bitcoin, litecoin, shibe, memes, community, sale, ethereum, bit, btc, eth">
     <link rel="shortcut icon" type="image/jpg" href="DogeShop/../Pictures/Cjdowner-Cryptocurrency-Flat-Dogecoin-DOGE.svg">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">

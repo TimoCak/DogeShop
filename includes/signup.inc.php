@@ -67,9 +67,9 @@ if (isset($_POST["submit"])) {
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = 'Welcome '.$username.'to sellfordoge.com!';
-        $mail->Body = "Please join the community and begin to sell(buy) products for dogecoin! <a href='https://sellfordoge.com'>sellfordoge.com</a>";
-        $mail->AltBody = 'Please join the community and begin to sell(buy) products for dogecoin! Visit: https://sellfordoge.com';
+        $mail->Subject = 'Welcome '.$username.' to sellfordoge.com !';
+        $mail->Body = "Please join the community and begin to sell(buy) products with dogecoin! <a href='https://sellfordoge.com'>sellfordoge.com</a>";
+        $mail->AltBody = 'Please join the community and begin to sell(buy) products with dogecoin! Visit: https://sellfordoge.com';
 
         $mail->send();
         echo 'Message has been sent';

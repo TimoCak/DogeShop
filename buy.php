@@ -12,7 +12,7 @@
 </head>
 <body style="background-color: #dec06e">
 <br>
-<h4>BUY STUFF FOR DOGE!</h4><br>
+<h4>BUY STUFF WITH DOGE!</h4><br>
 
 <script language="JavaScript">
 
