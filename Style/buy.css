@@ -30,10 +30,6 @@ body {
     transition: transform 0.5s;
     transform: scale(1.2, 1.2);
 }
-.card {
-    background-color: #1e4151;
-    color: #c2bd60;
-}
 
 .owner-badge {
     display: block;
@@ -50,4 +46,43 @@ body {
 
 .login-link:hover {
     color: #c2bd60;
+}
+
+.firstCard {
+    margin: 0px;
+    padding: 0px;
+    background-color: #1e4151;
+    color: #c2bd60;
+
+}
+
+.secondCard {
+    background-color: #c2bd60;
+}
+
+.btn {
+    color: #dec06e;
+    background-color: #111111;
+    border-color: black;
+}
+
+.btn:hover {
+    background-color: #dec06e;
+    color: #111111;
+    border-color: #111111;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .card-img-left {
+        width: 250px;
+        height: 250px;
+    }
+    #search {
+        width: 90%;
+    }
+    #category {
+        width: 90%;
+    }
+
 }

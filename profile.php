@@ -42,6 +42,27 @@
             color: #c2bd60;
         }
 
+        #personalInfo {
+            background-color: #1e4151;
+            width: 50%;
+            height: auto;
+            margin: auto;
+            color: #c2bd60;
+        }
+
+        @media only screen and (max-width: 800px) {
+            #user {
+                width: 85%;
+            }
+            .form-control {
+                width: 85%;
+            }
+            #personalInfo {
+                width: 85%;
+            }
+
+        }
+
     </style>
 
 </head>
@@ -95,7 +116,7 @@
 
                echo "</div><br><br>";
 
-                   echo "<div style='background-color: #1e4151;width: 50%;height: auto;margin: auto;color: #c2bd60'>
+                   echo "<div id='personalInfo'>
                          <form method='post' action='updates/changeName.php'>   
                          <p><b>Full Name</b></p> 
                          <input class='form-control' id='name' type='text' name='name' placeholder='".str_replace(' ',' ',$i["usersName"])."'><br>
@@ -156,7 +177,7 @@
                        echo "<p style='color: red'>passwords don't match!</p>";
                    }
                }
-               echo            "</div>";
+               echo            "</div><br><br>";
 
 
 

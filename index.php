@@ -24,8 +24,7 @@
 
 <button onclick="openLink()" class="actions"><h2>Much buy <img src="Pictures/doge-vector-illustration.png" width="50" height="50"></h2></button>
 <button onclick="openLink1()" class="actions"><h2>Such sell <img src="Pictures/doge-vector-illustration.png" width="50" height="50"></h2></button>
-
-<a href="https://dogecoin.com/" data-toggle="tooltip" title="Get a Doge Wallet!"><img class="Logo" src="Pictures/DogeAstro.jpg" style="position: absolute;margin-top: 10%"></a>
+<br>
 
 <?php
     include "Connector/db_connect.php";
@@ -37,7 +36,7 @@
     $dbh->close();
 
 # will be activated when there are more users!
-#echo "<h5>".$amount." registered shibes</h5> ";
+ echo "<h5>".$amount." registered shibes</h5> ";
 
 ?>
 

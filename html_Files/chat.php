@@ -12,7 +12,6 @@ if (file_exists("../includes/functions.inc.php")) {
 include "../includes/functions.inc.php";
 }
 #select history
-
 if (isset($_GET["id"])&&isUserInChat($_GET["id"])) {
 
     $res = selectHistory($_GET["id"]);
@@ -32,7 +31,6 @@ if (isset($_GET["id"])&&isUserInChat($_GET["id"])) {
 
         }
     }
-
 
 }
 ?>

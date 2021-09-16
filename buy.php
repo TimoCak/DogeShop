@@ -35,7 +35,7 @@
 
 <form  action="buy.php" method="get">
 <div class="input-group" style="width: 50%;height: auto;display: inline-flex;margin-bottom: 20px">
-    <input  type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+    <input id="search" type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
            aria-describedby="search-addon" name="search" value=""/>
     <?php
         echo "<select id='category' name='category' class='form-control'>";
@@ -85,7 +85,7 @@
         if ($res->num_rows > 0) {
             while ($i = $res->fetch_assoc()) {
 
-                echo "<div id='product' class='card-group'><div class='card' >";
+                echo "<div id='product' class='card-group'><div class='card firstCard' >";
                 if ($i["title"]=="") {
                     echo "<h2 class='card-title'>Unknown Title</h2>";
                 } else {
@@ -93,7 +93,7 @@
                 }
 
                 echo "<p style='margin-left: 50%'><b>" . $i["price"] . "</b> DOGE" .
-                    "</p>" . "<img class='card-img-left' width='300px' height='250px' src=".str_replace(" ", "%20", $i['picture'])."></div><br><br>" ."<div class='card'><div class='card-body'><h5 class='card-title'>Description</h5><textarea rows='7' readonly id='description' class='card-text'>".$i["description"]."</textarea></div>";
+                    "</p>" . "<img class='card-img-left' width='300px' height='250px' src=".str_replace(" ", "%20", $i['picture'])."></div>" ."<div class='card secondCard'><div class='card-body'><h5 class='card-title'>Description</h5><textarea rows='7' readonly id='description' class='card-text'>".$i["description"]."</textarea></div>";
 
                 echo "<table class='table' style='border-style: solid;border-width: 5px'><tr>";
 

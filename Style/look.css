@@ -38,24 +38,18 @@ body {
     overflow: hidden;
 }
 
-.Logo {
-    width: 15%;
-    height: auto;
-    position: absolute;
-    z-index: -1;
-    top: 20%;
-    left: 80%;
-}
-
 .Logo:hover {
     transition: transform 0.5s;
     transform: scale(1.2, 1.2);
 }
 
-#ElonJesus {
+h5 {
+    color: darkred;
+    position: initial;
+    text-align: center;
+    background-color: ghostwhite;
+    margin: auto;
     width: 250px;
-    height: auto;
-    z-index: -1;
 }
 
 

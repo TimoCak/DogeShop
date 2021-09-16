@@ -41,6 +41,9 @@ include "html_Files/particles.php";
             color: #c2bd60;
             display: inline-block;
         }
+        #text {
+            width: 90%;
+        }
     </style>
 </head>
 
@@ -75,7 +78,7 @@ include "html_Files/particles.php";
         <li>sign up</li>
         <li>contact the seller of your chosen product!</li>
     </ol>
-    </div>
+    </div><br<br><br><br><br>
 
 </body>
 

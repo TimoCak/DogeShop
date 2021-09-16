@@ -20,10 +20,14 @@ while ($counter <= $amountOfSites) {
 echo "</div></div>";
 ?>
 <style>
-    .offset {
-        display: flex;
+    .col-sm {
+        padding: 0px;
+        margin: 0px;
     }
 
+    .row {
+        display: inline-flex;
+    }
     .page {
         background-color: gray;
     }

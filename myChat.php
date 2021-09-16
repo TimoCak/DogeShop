@@ -35,8 +35,15 @@ include "html_Files/particles.php";
     @media only screen and (max-width: 700px) {
         #chats {
             margin: unset;
+            margin-top: 10px;
             padding: unset;
+            width: 150px;
+            height: 200px;
+            position: initial;
+            display: inline-flex;
+            overflow-x: hidden;
         }
+
 
     }
     .users {
@@ -187,7 +194,7 @@ if(isset($_GET["id"])) {
 
         }
 
-        echo "</ul>";
+        echo "</ul><br><br>";
 
     $stmt2->free_result();
 
