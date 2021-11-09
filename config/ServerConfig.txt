@@ -1,0 +1,44 @@
+password: P6pefeS57Zvo
+
+chmod -c -R 777 DogeShop
+
+create database products;
+
+CREATE TABLE chats (
+chatId int NOT NULL AUTO_INCREMENT,
+user1 int,
+user2 int,	
+PRIMARY KEY(chatId)
+);
+
+CREATE TABLE information(
+title varchar(150),
+description varchar(255),
+wallet varchar(150),
+price double NOT NULL,
+post_time date,
+picture varchar(150),
+userId int,
+productId int NOT NULL AUTO_INCREMENT,
+category varchar(150),
+PRIMARY KEY(productId) 
+);
+
+CREATE TABLE users (
+usersId int NOT NULL AUTO_INCREMENT,
+usersName varchar(128),
+usersEmail varchar(128) NOT NULL,
+usersUid varchar(128) NOT NULL,
+usersPwd varchar(128) NOT NULL,
+usersVerified bit(1) DEFAULT 0,
+usersPicture varchar(150) NOT NULL,
+PRIMARY KEY(usersId)
+);
+
+
+CREATE TABLE history4 (
+messageId int NOT NULL AUTO_INCREMENT,
+userId int,
+message varchar(255),
+PRIMARY KEY(messageId)
+);

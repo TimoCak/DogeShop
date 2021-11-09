@@ -92,6 +92,9 @@
             }
 
             ?>
+            <li class="nav-item">
+                <a class="nav-link" href="users.php"> users</a>
+            </li>
             <?php
                 if (isset($_SESSION["useruid"])) {
                     echo "<li class='nav-item'>
